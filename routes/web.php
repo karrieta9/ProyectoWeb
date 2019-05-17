@@ -18,3 +18,17 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+
+//borar luego
+Route::get('email', function () {
+    return view('\auth\passwords\email');
+});
+
+Route::get('reset', function () {
+    return view('\auth\passwords\reset');
+});
+
+Route::get('verify', function () {
+    return view('\auth\verify');
+});

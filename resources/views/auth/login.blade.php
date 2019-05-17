@@ -3,7 +3,7 @@
 @section('content')
 <div class="container-fluid">
     <div class="row justify-content-center">
-        <div class="col-md-8">
+        <div class="col-lg-8 col-md-11">
             <div class="card px-5 py-4">
                 <h2 class="p-4">{{ __('Inicio de Sesion en ') }}<span>Fast Food</span></h2>
                 <div class="card-body">
@@ -11,7 +11,7 @@
                         @csrf
                         <div class="form-group row">
                             <div class="col-md-12">
-                                <input id="username" type="text" placeholder="{{ __('Username o Email')}}" class="form-control @error('username') is-invalid  @enderror @error('email') is-invalid @enderror" name="username" value="{{ old('username') ?: old('email') }}" required autocomplete="username" autofocus>
+                                <input id="username" type="text" placeholder="{{ __('Usuario o Correo')}}" class="form-control @error('username') is-invalid  @enderror @error('email') is-invalid @enderror" name="username" value="{{ old('username') ?: old('email') }}" required autocomplete="username" autofocus>
 
                                 @error('username')
                                     <span class="invalid-feedback" role="alert">
@@ -60,7 +60,7 @@
 
                         <div class="form-group row mb-0">
                             <div class="col-md-12 mt-3 mx-auto">
-                                <button type="submit" class="btn btnLogIn">
+                                <button type="submit" class="btn btnSubmit">
                                     {{ __('Iniciar') }}
                                 </button>
                             </div>

@@ -4,14 +4,15 @@
 *{
     font-family: 'Oswald', sans-serif;
     /* --colorprincipal:#f33030; */
-    --colorprincipal:#8bc34a;
+    /* --colorprincipal:#8bc34a; */
+    --colorprincipal:#FF5722;;
 }
 .card{
     background: #f3f3f3;
 }
 .card h2 span{
     color: var(--colorprincipal);
-    font-family: 'Great Vibes', cursive;
+    /* font-family: 'Great Vibes', cursive; */
 }
 .card-body form input{
     padding: 1.1em;
@@ -38,7 +39,7 @@
 .card-body form .btn-link{
     color: var(--colorprincipal);
 }
-.card-body form .btnLogIn{
+.card-body form .btnSubmit{
     background: var(--colorprincipal);
     border-color: var(--colorprincipal);
     width: 100%;
@@ -60,7 +61,6 @@
 	height:40px;
 
 }
-
 .card-body form .register p{
     color: #999999;
     display: table-cell;
