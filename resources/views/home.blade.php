@@ -15,6 +15,8 @@
                     @endif
 
                     You are logged in!
+                    <h1>Bienvenido estas en el Inicio</h1>         
+                    <h3>click en el boton de las seccion a la que quieras ir </h3>
                 </div>
             </div>
         </div>
