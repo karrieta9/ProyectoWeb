@@ -1,7 +1,7 @@
 @extends('layouts.login_register')
 
 @section('tittle')
-    <title>{{ __('Restablecimiento Contraseña - FastFood')}}</title>
+    <title>{{ __('Restablecimiento Contraseña - ')}}{{ config('app.name', 'Laravel') }}</title>
 @endsection
 
 @section('content')

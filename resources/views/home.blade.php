@@ -1,6 +1,13 @@
 @extends('layouts.app')
 
+@section('tittle')
+    <title>{{ __('Inicio - ')}}{{ config('app.name', 'Laravel') }}</title>
+@endsection
+
 @section('content')
+<DIV style="background:red">
+HI
+</DIV>
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">

@@ -1,7 +1,7 @@
 @extends('layouts.login_register')
 
 @section('tittle')
-    <title>{{ __('Inicio Sesion - FastFood')}}</title>
+    <title>{{ __('Inicio Sesion - ')}}{{ config('app.name', 'Laravel') }}</title>
 @endsection
 
 @section('content')
