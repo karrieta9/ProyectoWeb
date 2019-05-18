@@ -1,5 +1,9 @@
 @extends('layouts.login_register')
 
+@section('tittle')
+    <title>{{ __('Inicio Sesion - FastFood')}}</title>
+@endsection
+
 @section('content')
 <div class="container-fluid">
     <div class="row justify-content-center">

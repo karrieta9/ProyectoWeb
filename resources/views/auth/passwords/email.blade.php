@@ -1,12 +1,15 @@
-@extends('layouts.app')
+@extends('layouts.login_register')
+
+@section('tittle')
+    <title>{{ __('Restablecimiento Contraseña - FastFood')}}</title>
+@endsection
 
 @section('content')
-<div class="container">
+<div class="container-fluid">
     <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">{{ __('Reset Password') }}</div>
-
+        <div class="col-lg-8 col-md-11">
+            <div class="card px-5 py-4">
+                <h2 class="p-4">{{ __('Restablecimiento de Contraseña') }}</h2>
                 <div class="card-body">
                     @if (session('status'))
                         <div class="alert alert-success" role="alert">
@@ -16,12 +19,10 @@
 
                     <form method="POST" action="{{ route('password.email') }}">
                         @csrf
-
+                        <p>Por Favor Ingresa Tu Correo Para Enviarte Un Enlace De Restablecimiento De Contraseña.</p>      
                         <div class="form-group row">
-                            <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('E-Mail Address') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
+                            <div class="col-md-12">
+                                <input id="email" type="email" placeholder="{{ __('Correo') }}" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
 
                                 @error('email')
                                     <span class="invalid-feedback" role="alert">
@@ -32,9 +33,9 @@
                         </div>
 
                         <div class="form-group row mb-0">
-                            <div class="col-md-6 offset-md-4">
-                                <button type="submit" class="btn btn-primary">
-                                    {{ __('Send Password Reset Link') }}
+                            <div class="col-md-12 mt-3 mx-auto">
+                                <button type="submit" class="btn btnSubmit">
+                                    {{ __('Restablecer Contraseña') }}
                                 </button>
                             </div>
                         </div>
