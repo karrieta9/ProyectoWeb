@@ -5,6 +5,67 @@
     font-family: 'Oswald', sans-serif;
     --colorprincipal:#FF5722;;
 }
+/*ESTILOS FORMS*/
+.card{
+    background: #f3f3f3;
+}
+.card h2 span{
+    color: var(--colorprincipal);
+    /* font-family: 'Great Vibes', cursive; */
+}
+.card-body form input{
+    padding: 1.1em;
+    color: #010101;
+    font-size: 17px;
+    outline: none;
+    background: none;
+    font-weight: 500;
+    border: 1px solid #999999;
+}
+/* , .card-body form input:hover + .card-body form input:focus */
+.card-body form input:hover {
+    border: 1px solid var(--colorprincipal);
+}
+.card-body form input:focus{
+   box-shadow: none;
+   color: #010101;
+   border: 1px solid #999999;
+   background: none;
+}
+.card-body form .form-check{
+    color: #999999;
+}
+.card-body form .btn-link{
+    color: var(--colorprincipal);
+}
+.card-body form .btnSubmit{
+    background: var(--colorprincipal);
+    border-color: var(--colorprincipal);
+    width: 100%;
+    color: #fff;
+    padding: 0.5em;
+    transition: all 0.5s;
+}
+.card-body form .btnSubmit:hover{
+    background: #f14711;
+}
+.card-body form .register{
+    border: 1px solid #999999;
+    border-radius: .25rem;
+    letter-spacing: 1px;
+    text-align: center;
+    margin: auto;
+
+    display: table;
+	height:40px;
+
+}
+.card-body form .register p{
+    color: #999999;
+    display: table-cell;
+	vertical-align: middle;
+
+}
 /* ESTILOS NAVBAR */
 nav .links a{
     color: #fff ;
@@ -49,3 +110,81 @@ footer p{
     font-size: 1.1em;
     line-height: 30px;
 }
+
+
+/* ESTILOS INICIO */
+
+.container h1{
+    letter-spacing: 1px;
+    /* margin: 0; */
+}
+.container p{
+    font-size: 1rem;
+}
+.container h1 span{
+    color: var(--colorprincipal); 
+}
+
+.container .secciones a{  
+    background: #fff;
+    color: #010101;
+    text-align: center;
+    font-size: 10em;
+    line-height: 20px;
+    padding: 21px;
+    border: 3px solid var(--colorprincipal); 
+} 
+
+
+
+
+.container .secciones .imagen{
+    width: 180px;
+    height: 180px;
+    padding: 0;
+    /* transition: all 2s; */
+    border: 3px solid var(--colorprincipal); 
+    overflow: hidden;
+}
+.container .secciones .imagen:nth-child(1){
+    background-image: url(../img/ingredientes.jpg);
+    background-size: cover;
+  }
+.container .secciones .imagen:nth-child(2){
+  background-image: url(../img/platos.jpg);
+  background-size: cover;
+}
+.container .secciones .imagen:nth-child(3){
+    background-image: url(../img/ordenes.jpg);
+    background-size: cover;
+}
+.container .secciones .imagen:nth-child(4){
+    background-image: url(../img/pagos.jpg);
+    background-size: cover;
+}
+.container .secciones .imagen:nth-child(5){
+    background-image: url(../img/ventas.jpg);
+    background-size: cover;
+}
+.container .secciones .imagen .info{
+    width: 0;
+    height: 180px;
+    position: absolute;
+    background: rgba(255, 87, 34, 0.7);
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    overflow: hidden;
+    transition: 0.7s ease;
+}
+.container .secciones .imagen .info h2{
+    font-size: 1.2rem;
+    color: #fff;
+    margin-left: 8px;
+    min-width: 110px;
+    text-align: left;
+}
+.container .secciones .imagen:hover   .info {
+     width: 120px;  
+}  
+

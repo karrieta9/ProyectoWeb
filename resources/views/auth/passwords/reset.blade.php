@@ -10,7 +10,7 @@
         <div class="col-lg-8 col-md-11">
             <div class="card px-5 py-4">
                 <h2 class="p-4">{{ __('Restablecimiento de Contraseña') }}</h2>
-                <div class="card-body">
+                <div class="card-body py-0">
                     <form method="POST" action="{{ route('password.update') }}">
                         @csrf
 

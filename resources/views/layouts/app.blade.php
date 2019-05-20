@@ -21,7 +21,7 @@
 </head>
 <body>
     <div id="app">
-        <nav class="navbar navbar-expand-md navbar-dark bg-dark shadow-sm sticky-top py-1">
+        <nav class="navbar navbar-expand-md navbar-dark bg-dark shadow-sm sticky-top py-1 mb-2">
             <div class="container">
                 <a class="navbar-brand logo m-0" href="{{ url('/home') }}">{{ __('Fast Food') }}</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
@@ -30,19 +30,20 @@
 
                 <div class="collapse navbar-collapse text-center links" id="navbarSupportedContent">
                     <div class="navbar-nav m-auto">
-                        <a class="nav-item navb-link active" href="#">Home</a>
-                        <a class="nav-item navb-link activo" href="#">Features</a>
-                        <a class="nav-item navb-link" href="#">Pricing</a>
-                        <a class="nav-item navb-link disabled" href="#">Disabled</a>
-                        <a class="nav-item navb-link disabled" href="#">Disabled</a>
-                        <div class="nav-item dropdown">
+                        <a class="nav-item navb-link {{! Route::is('home') ?: 'active'}} " href="{{ route('home') }}">Inicio</a>
+                        <a class="nav-item navb-link {{!Route::is('ingredients*') ?: 'active'}} " href="{{ url('ingredients') }}">Ingredientes</a>
+                        <a class="nav-item navb-link {{!Route::is('ingredients*') ?: 'active'}} " href="#">Platos</a>
+                        <a class="nav-item navb-link {{!Route::is('ingredients') ?: 'active'}} " href="#">Ordenes</a>
+                        <a class="nav-item navb-link {{!Route::is('ingredients') ?: 'active'}} " href="#">Cierre/Liquidacion</a>
+                        <a class="nav-item navb-link {{!Route::is('ingredients') ?: 'active'}} " href="#">Ventas</a>
+                        {{-- <div class="nav-item dropdown">
                             <a id="navbarDropdown" class="navb-link dropdown-toggle" href="" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>DropDown</a>
                             <div class="dropdown-menu dropdown-menu-right text-center m-auto" aria-labelledby="navbarDropdown">
                                 <a class="dropdown-item" href="#"
                                     onclick="event.preventDefault();document.getElementById('logout-form').submit();">{{ __('Salir') }}
                                 </a>
                             </div>
-                        </div>
+                        </div> --}}
                         
                         
                     </div>
@@ -72,9 +73,8 @@
         <main class="py-4">
             @yield('content')
         </main>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus magnam neque asperiores, deserunt id nobis, quae quos nihil, debitis quam quas corporis amet odio totam facilis officiis hic vitae obcaecati. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Vitae praesentium officiis corrupti cumque repellendus aut, provident fugiat nostrum nihil soluta explicabo deserunt impedit in distinctio amet earum animi aperiam magnam. Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus magnam neque asperiores, deserunt id nobis, quae quos nihil, debitis quam quas corporis amet odio totam facilis officiis hic vitae obcaecati. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Vitae praesentium officiis corrupti cumque repellendus aut, provident fugiat nostrum nihil soluta explicabo deserunt impedit in distinctio amet earum animi aperiam magnam. Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus magnam neque asperiores, deserunt id nobis, quae quos nihil, debitis quam quas corporis amet odio totam facilis officiis hic vitae obcaecati. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Vitae praesentium officiis corrupti cumque repellendus aut, provident fugiat nostrum nihil soluta explicabo deserunt impedit in distinctio amet earum animi aperiam magnam. Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus magnam neque asperiores, deserunt id nobis, quae quos nihil, debitis quam quas corporis amet odio totam facilis officiis hic vitae obcaecati. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Vitae praesentium officiis corrupti cumque repellendus aut, provident fugiat nostrum nihil soluta explicabo deserunt impedit in distinctio amet earum animi aperiam magnam. Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus magnam neque asperiores, deserunt id nobis, quae quos nihil, debitis quam quas corporis amet odio totam facilis officiis hic vitae obcaecati. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Vitae praesentium officiis corrupti cumque repellendus aut, provident fugiat nostrum nihil soluta explicabo deserunt impedit in distinctio amet earum animi aperiam magnam. Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus magnam neque asperiores, deserunt id nobis, quae quos nihil, debitis quam quas corporis amet odio totam facilis officiis hic vitae obcaecati. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Vitae praesentium officiis corrupti cumque repellendus aut, provident fugiat nostrum nihil soluta explicabo deserunt impedit in distinctio amet earum animi aperiam magnam. Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus magnam neque asperiores, deserunt id nobis, quae quos nihil, debitis quam quas corporis amet odio totam facilis officiis hic vitae obcaecati. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Vitae praesentium officiis corrupti cumque repellendus aut, provident fugiat nostrum nihil soluta explicabo deserunt impedit in distinctio amet earum animi aperiam magnam. Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus magnam neque asperiores, deserunt id nobis, quae quos nihil, debitis quam quas corporis amet odio totam facilis officiis hic vitae obcaecati. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Vitae praesentium officiis corrupti cumque repellendus aut, provident fugiat nostrum nihil soluta explicabo deserunt impedit in distinctio amet earum animi aperiam magnam. Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus magnam neque asperiores, deserunt id nobis, quae quos nihil, debitis quam quas corporis amet odio totam facilis officiis hic vitae obcaecati. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Vitae praesentium officiis corrupti cumque repellendus aut, provident fugiat nostrum nihil soluta explicabo deserunt impedit in distinctio amet earum animi aperiam magnam. Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus magnam neque asperiores, deserunt id nobis, quae quos nihil, debitis quam quas corporis amet odio totam facilis officiis hic vitae obcaecati. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Vitae praesentium officiis corrupti cumque repellendus aut, provident fugiat nostrum nihil soluta explicabo deserunt impedit in distinctio amet earum animi aperiam magnam. Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus magnam neque asperiores, deserunt id nobis, quae quos nihil, debitis quam quas corporis amet odio totam facilis officiis hic vitae obcaecati. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Vitae praesentium officiis corrupti cumque repellendus aut, provident fugiat nostrum nihil soluta explicabo deserunt impedit in distinctio amet earum animi aperiam magnam. Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus magnam neque asperiores, deserunt id nobis, quae quos nihil, debitis quam quas corporis amet odio totam facilis officiis hic vitae obcaecati. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Vitae praesentium officiis corrupti cumque repellendus aut, provident fugiat nostrum nihil soluta explicabo deserunt impedit in distinctio amet earum animi aperiam magnam. Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus magnam neque asperiores, deserunt id nobis, quae quos nihil, debitis quam quas corporis amet odio totam facilis officiis hic vitae obcaecati. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Vitae praesentium officiis corrupti cumque repellendus aut, provident fugiat nostrum nihil soluta explicabo deserunt impedit in distinctio amet earum animi aperiam magnam.    
     
-    <footer class="navbar-dark bg-dark py-4">
+    <footer class="navbar-dark bg-dark py-4 mt-5">
         <div class="container row m-auto">
             <div class="info col-6 py-3 px-5">
             <h3>Fast Food</h3>    

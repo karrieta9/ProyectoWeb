@@ -19,16 +19,10 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
+//  Route::get('/ingredients', 'IngredientesController@index')->name('ingredients');
+//  Route::post('/ingredients', 'IngredientesController@store');
+// Route::get('ingredients/{ingredient}/edit', 'IngredientesController@edit');
 
-//borar luego
-Route::get('email', function () {
-    return view('\auth\passwords\email');
-});
 
-Route::get('reset', function () {
-    return view('\auth\passwords\reset');
-});
 
-Route::get('verify', function () {
-    return view('\auth\verify');
-});
+Route::resource('ingredients','IngredientesController');

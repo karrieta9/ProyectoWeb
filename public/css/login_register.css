@@ -47,8 +47,8 @@
     padding: 0.5em;
     transition: all 0.5s;
 }
-.card-body form .btnLogIn:hover{
-    background: #010101;
+.card-body form .btnSubmit:hover{
+    background: #f14711;
 }
 .card-body form .register{
     border: 1px solid #999999;
