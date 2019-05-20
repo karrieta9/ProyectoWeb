@@ -15,6 +15,7 @@ class IngredientesController extends Controller
     public function index()
     {
         $datos['ingredientes']=Ingredientes::paginate(5);
+
         return view('ingredients', $datos); 
     }
 
@@ -36,12 +37,16 @@ class IngredientesController extends Controller
      */
     public function store(Request $request)
     {
+        $inputs = $request->validate(['nombre' => 'required|string|max:50',
+                    'proveedor' => 'required|string|max:50']);
         // $datos = request()->all();
 
         $datos = request()->except('_token');
 
         Ingredientes::insert($datos);
-        return response()->json($datos);
+        // return response()->json($datos);
+
+        return redirect('ingredients')->with('Mensaje','Ingrediente Registrado Correctamente');
     }
 
     /**
@@ -75,9 +80,16 @@ class IngredientesController extends Controller
      * @param  \App\Ingredientes  $ingredientes
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Ingredientes $ingredientes)
+    public function update(Request $request, $codigo)
     {
-        //
+        $inputs = $request->validate(['nombre' => 'required|string|max:50',
+                    'proveedor' => 'required|string|max:50']);
+                    
+        $datos = request()->except(['_token','_method']);
+        Ingredientes::where('codigo','=',$codigo)->update($datos); 
+
+        return redirect('ingredients')->with('Mensaje','Ingrediente Actualizado Correctamente');
+
     }
 
     /**

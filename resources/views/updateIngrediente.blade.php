@@ -10,10 +10,11 @@
 
         <div class="row justify-content-center">
             <div class="col-lg-12 col-md-11 pt-3">
-                <div class="card px-5 py-4">
-                    <div class="card-body">
-                        <form method="POST" action="{{url('/ingredients')}}">
+                <div class="card px-5 py-4 mb-3">
+                    <div class="card-body pb-0">
+                        <form method="POST" action="{{url('/ingredients/'.$ingrediente->codigo)}}">
                             @csrf
+                            {{method_field('PATCH')}}
                             <div class="form-group row">
                                 <div class="col-md-12">
                                     <input id="nombre" type="text" placeholder="{{ __('Nombre') }}" class="form-control @error('nombre') is-invalid @enderror" name="nombre" value="{{$ingrediente->nombre }}" required autocomplete="nombre" autofocus>

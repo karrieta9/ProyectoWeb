@@ -5,67 +5,7 @@
     font-family: 'Oswald', sans-serif;
     --colorprincipal:#FF5722;;
 }
-/*ESTILOS FORMS*/
-.card{
-    background: #f3f3f3;
-}
-.card h2 span{
-    color: var(--colorprincipal);
-    /* font-family: 'Great Vibes', cursive; */
-}
-.card-body form input{
-    padding: 1.1em;
-    color: #010101;
-    font-size: 17px;
-    outline: none;
-    background: none;
-    font-weight: 500;
-    border: 1px solid #999999;
-}
-/* , .card-body form input:hover + .card-body form input:focus */
-.card-body form input:hover {
-    border: 1px solid var(--colorprincipal);
-}
-.card-body form input:focus{
-   box-shadow: none;
-   color: #010101;
-   border: 1px solid #999999;
-   background: none;
-}
-.card-body form .form-check{
-    color: #999999;
-}
-.card-body form .btn-link{
-    color: var(--colorprincipal);
-}
-.card-body form .btnSubmit{
-    background: var(--colorprincipal);
-    border-color: var(--colorprincipal);
-    width: 100%;
-    color: #fff;
-    padding: 0.5em;
-    transition: all 0.5s;
-}
-.card-body form .btnSubmit:hover{
-    background: #f14711;
-}
-.card-body form .register{
-    border: 1px solid #999999;
-    border-radius: .25rem;
-    letter-spacing: 1px;
-    text-align: center;
-    margin: auto;
 
-    display: table;
-	height:40px;
-
-}
-.card-body form .register p{
-    color: #999999;
-    display: table-cell;
-	vertical-align: middle;
-
-}
 /* ESTILOS NAVBAR */
 nav .links a{
     color: #fff ;
@@ -135,9 +75,6 @@ footer p{
     border: 3px solid var(--colorprincipal); 
 } 
 
-
-
-
 .container .secciones .imagen{
     width: 180px;
     height: 180px;
@@ -188,3 +125,78 @@ footer p{
      width: 120px;  
 }  
 
+
+/*ESTILOS FORMS*/
+.card{
+    background: #f3f3f3;
+}
+.card h2 span{
+    color: var(--colorprincipal);
+    /* font-family: 'Great Vibes', cursive; */
+}
+.card-body form input{
+    padding: 1.1em;
+    color: #010101;
+    font-size: 17px;
+    outline: none;
+    background: none;
+    font-weight: 500;
+    border: 1px solid #999999;
+    text-transform: capitalize;
+}
+/* , .card-body form input:hover + .card-body form input:focus */
+.card-body form input:hover {
+    border: 1px solid var(--colorprincipal);
+}
+.card-body form input:focus{
+   box-shadow: none;
+   color: #010101;
+   border: 1px solid #999999;
+   background: none;
+}
+.card-body form .form-check{
+    color: #999999;
+}
+.btn-link,.btn-link:hover{
+    color: var(--colorprincipal);
+}
+.card-body form .btnSubmit{
+    background: var(--colorprincipal);
+    border-color: var(--colorprincipal);
+    width: 100%;
+    color: #fff;
+    padding: 0.5em;
+    transition: all 0.5s;
+}
+.card-body form .btnSubmit:hover{
+    background: #f14711;
+}
+.card-body form .register{
+    border: 1px solid #999999;
+    border-radius: .25rem;
+    letter-spacing: 1px;
+    text-align: center;
+    margin: auto;
+
+    display: table;
+	height:40px;
+
+}
+.card-body form .register p{
+    color: #999999;
+    display: table-cell;
+	vertical-align: middle;
+
+}
+
+/* ESTILOS PAGINADOR */
+.page-link{
+    color: var(--colorprincipal);
+}
+.page-link:hover{
+    color: #f14711;
+}
+.page-item.active .page-link{
+    background-color: var(--colorprincipal);
+    border-color: var(--colorprincipal);
+}
