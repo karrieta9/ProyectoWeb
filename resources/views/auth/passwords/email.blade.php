@@ -9,7 +9,7 @@
     <div class="row justify-content-center">
         <div class="col-lg-8 col-md-11">
             <div class="card px-5 py-4">
-                <h2 class="p-4">{{ __('Restablecimiento de Contraseña') }}</h2>
+                <h2 class="p-4">{{ __('Restablecimiento de ') }}<span>Contraseña</span></h2>
                 <div class="card-body py-0">
                     @if (session('status'))
                         <div class="alert alert-success" role="alert">

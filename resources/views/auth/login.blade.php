@@ -9,7 +9,7 @@
     <div class="row justify-content-center">
         <div class="col-lg-8 col-md-11">
             <div class="card px-5 py-4">
-                <h2 class="p-4">{{ __('Inicio de Sesion en ') }}<span>Fast Food</span></h2>
+                <h2 class="p-4">{{ __('Inicio de ') }}<span>Sesion</span></h2>
                 <div class="card-body">
                     <form method="POST" action="{{ route('login') }}">
                         @csrf

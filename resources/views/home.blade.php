@@ -20,15 +20,15 @@
         
     <div class="container secciones row d-flex justify-content-center  justify-content-md-between">
         <a href="{{ url('ingredients') }}" class="imagen col-7 col-md-5 col-lg-2 mb-4 mb-lg-0">
-            <div class="info"><h2>Creacion Y Actualizacion De Ingredientes</h2></div>
+            <div class="info"><h2>Registro Y Actualizacion De Ingredientes</h2></div>
         </a> 
         
-        <a href="" class="imagen col-7 col-md-5 col-lg-2 mb-4 mb-lg-0">
-            <div class="info"><h2>Creacion Y Actualizacion De Platos</h2></div>
+        <a href="{{ url('dishes') }}" class="imagen col-7 col-md-5 col-lg-2 mb-4 mb-lg-0">
+            <div class="info"><h2>Registro Y Actualizacion De Platos</h2></div>
         </a>
 
         <a href="" class="imagen col-7 col-md-5 col-lg-2 mb-4 mb-lg-0">
-            <div class="info"><h2>Creacion Y Actualizacion De Ordenes</h2></div>
+            <div class="info"><h2>Registro Y Actualizacion De Ordenes</h2></div>
         </a>
 
         <a href="" class="imagen col-7 col-md-5 col-lg-2 mb-4 mb-lg-0">

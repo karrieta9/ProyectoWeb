@@ -24,7 +24,7 @@
                             @csrf
                             <div class="form-group row">
                                 <div class="col-md-12">
-                                    <input id="nombre" type="text" placeholder="{{ __('Nombre') }}" class="form-control @error('nombre') is-invalid @enderror" name="nombre" value="{{ old('nombre') }}"  autocomplete="nombre" autofocus>
+                                    <input id="nombre" type="text" placeholder="{{ __('Nombre') }}" class="form-control @error('nombre') is-invalid @enderror" name="nombre" value="{{ old('nombre') }}" required autocomplete="nombre" autofocus>
         
                                     @error('nombre')
                                         <span class="invalid-feedback" role="alert">

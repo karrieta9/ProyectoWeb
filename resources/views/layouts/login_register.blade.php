@@ -9,7 +9,7 @@
 
     @yield('tittle')    
 
-    {{-- FAVICON AQUI --}}
+    <link rel="icon" href="{{{ asset('img/favicon.ico') }}}">
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
@@ -23,6 +23,12 @@
 </head>
 <body>
     <div id="app">
+            <nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow-sm sticky-top py-1 mb-4">
+                    <div class="container ">
+                        <a class="navbar-brand logo m-auto" href="{{ url('/') }}">{{ __('Fast Food') }}</a>   
+                    </div>
+                </nav>
+
         <main class="py-4">
             @yield('content')
         </main>

@@ -9,6 +9,7 @@
 
     @yield('tittle') 
 
+    <link rel="icon" href="{{{ asset('img/favicon.ico') }}}">
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
 
@@ -33,7 +34,7 @@
                     <div class="navbar-nav m-auto">
                         <a class="nav-item navb-link {{! Route::is('home') ?: 'active'}} " href="{{ route('home') }}">Inicio</a>
                         <a class="nav-item navb-link {{!Route::is('ingredients*') ?: 'active'}} " href="{{ url('ingredients') }}">Ingredientes</a>
-                        <a class="nav-item navb-link {{!Route::is('ingredients*') ?: 'active'}} " href="#">Platos</a>
+                        <a class="nav-item navb-link {{!Route::is('dishes*') ?: 'active'}} " href="{{ url('dishes') }}">Platos</a>
                         <a class="nav-item navb-link {{!Route::is('ingredients') ?: 'active'}} " href="#">Ordenes</a>
                         <a class="nav-item navb-link {{!Route::is('ingredients') ?: 'active'}} " href="#">Cierre/Liquidacion</a>
                         <a class="nav-item navb-link {{!Route::is('ingredients') ?: 'active'}} " href="#">Ventas</a>
