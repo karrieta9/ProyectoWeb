@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Platos;
+use App\Ingredientes;
 use Illuminate\Http\Request;
 
 class PlatosController extends Controller
@@ -15,10 +16,10 @@ class PlatosController extends Controller
     public function index()
     {
 
-        // $datos['ingredientes']=Ingredientes::paginate(5);
+        $datos['ingredientes']=Ingredientes::paginate();
 
 
-        return view('dishes'); 
+        return view('dishes',$datos); 
     }
 
     /**
@@ -39,7 +40,16 @@ class PlatosController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $inputs = $request->validate(['nombre' => 'required|string|max:50',
+                    'valor' => 'required|numeric']);
+                    // ,      'cantidad[]' => 'required|numeric'
+
+        $ingredientes = request()->except('_token','nombre','valor');
+        $datosPlato = request()->all('nombre','valor');
+
+
+       
+         return response()->json($ingredientes);
     }
 
     /**

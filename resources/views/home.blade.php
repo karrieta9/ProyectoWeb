@@ -23,7 +23,7 @@
             <div class="info"><h2>Registro Y Actualizacion De Ingredientes</h2></div>
         </a> 
         
-        <a href="{{ url('dishes') }}" class="imagen col-7 col-md-5 col-lg-2 mb-4 mb-lg-0">
+        <a href="{{ url('platos') }}" class="imagen col-7 col-md-5 col-lg-2 mb-4 mb-lg-0">
             <div class="info"><h2>Registro Y Actualizacion De Platos</h2></div>
         </a>
 

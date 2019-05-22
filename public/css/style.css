@@ -185,6 +185,10 @@ footer p{
 	vertical-align: middle;
 
 }
+.form-check input[type="text"]{
+    width: 100px;
+    display: inline-block;   
+}
 
 /* ESTILOS PAGINADOR */
 .page-link{

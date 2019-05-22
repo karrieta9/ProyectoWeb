@@ -34,7 +34,7 @@
                     <div class="navbar-nav m-auto">
                         <a class="nav-item navb-link {{! Route::is('home') ?: 'active'}} " href="{{ route('home') }}">Inicio</a>
                         <a class="nav-item navb-link {{!Route::is('ingredients*') ?: 'active'}} " href="{{ url('ingredients') }}">Ingredientes</a>
-                        <a class="nav-item navb-link {{!Route::is('dishes*') ?: 'active'}} " href="{{ url('dishes') }}">Platos</a>
+                        <a class="nav-item navb-link {{!Route::is('platos*') ?: 'active'}} " href="{{ url('platos') }}">Platos</a>
                         <a class="nav-item navb-link {{!Route::is('ingredients') ?: 'active'}} " href="#">Ordenes</a>
                         <a class="nav-item navb-link {{!Route::is('ingredients') ?: 'active'}} " href="#">Cierre/Liquidacion</a>
                         <a class="nav-item navb-link {{!Route::is('ingredients') ?: 'active'}} " href="#">Ventas</a>

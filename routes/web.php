@@ -26,4 +26,4 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 
 Route::resource('ingredients','IngredientesController');
-Route::resource('dishes','PlatosController');
+Route::resource('platos','PlatosController');
