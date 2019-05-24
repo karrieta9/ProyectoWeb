@@ -14,7 +14,9 @@ class CreatePlatosTable extends Migration
     public function up()
     {
         Schema::create('platos', function (Blueprint $table) {
-            $table->bigIncrements('id');
+            $table->Increments('codigo');
+            $table->char('nombre',50);
+            $table->double('valor', 8, 2);
             $table->timestamps();
         });
     }

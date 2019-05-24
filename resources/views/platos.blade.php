@@ -58,12 +58,21 @@
                             <div class="form-group row">
                                  <div class="col-md-12">
                                         <h6>Ingredientes: </h6>
-
+                                        @error('ingrediente' )
+                                            <div class="alert alert-danger" role="alert">
+                                                {{ $message }}
+                                            </div>
+                                        @enderror
                                         @foreach($ingredientes as $ingrediente)
                                          <div class="form-check pb-4">
-                                            <input type="checkbox" class="form-check-input" id="{{'ingrediente'}}{{$ingrediente->codigo}}" value="{{$ingrediente->codigo}}" name="{{'ingrediente'}}{{$ingrediente->codigo}}"  onChange="comprobar(this,{{$ingrediente->codigo}});">
+                                            <input type="checkbox" class="form-check-input" id="{{'ingrediente'}}{{$ingrediente->codigo}}" value="{{$ingrediente->codigo}}" name="ingrediente[]"  onChange="comprobar(this,{{$ingrediente->codigo}});">
                                             <label class="form-check-label" for="{{'ingrediente'}}{{$ingrediente->codigo}}">{{$ingrediente->nombre}}</label>
-                                            <input id="{{'cantidad'}}{{$ingrediente->codigo}}" type="text" placeholder="{{ __('Cantidad') }}" class="form-control @error('valor') is-invalid @enderror" name="cantidad[]" value="{{ old('cantidad') }}" required autocomplete="cantidad" disabled>
+                                            <input id="{{'cantidad'}}{{$ingrediente->codigo}}" type="text" placeholder="{{ __('Cantidad') }}" class="form-control @error('cantidad.*') is-invalid @enderror" name="cantidad[]"  required autocomplete="cantidad" value="{{ old('cantidad.*') }}" disabled>
+                                            @error('cantidad.*')
+                                                <span class="invalid-feedback" role="alert">
+                                                    <strong>{{ $message }}</strong>
+                                                </span>
+                                             @enderror
                                         </div>
                                         @endforeach
 

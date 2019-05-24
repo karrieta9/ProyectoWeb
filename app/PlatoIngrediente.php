@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Platos extends Model
+class PlatoIngrediente extends Model 
 {
     //
 }
