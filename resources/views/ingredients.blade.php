@@ -73,21 +73,21 @@
                     </tr>
                 </thead>
                 <tbody>
-                    @foreach($ingredientes as $ingrediente)    
+                    @forelse($ingredientes as $ingrediente)    
                     <tr>
                         <th scope="row">{{$ingrediente->codigo}}</th>
                         <td>{{$ingrediente->nombre}}</td>
                         <td>{{$ingrediente->proveedor}}</td>
                         <td><a class="btn-link" href="{{url('/ingredients/'.$ingrediente->codigo.'/edit')}}">Actualizar</a></td>
                     </tr>
-                {{-- @else
-                    <tr>
-                        <td col="4">No hay Registros en la Bd</td>
-                        </tr> --}}
-                    @endforeach 
+                    @empty
+                    <tr><td colspan="5">No hay Registro en Base de Datos Ingredientes</td></tr>
+                    @endforelse
                 </tbody>
             </table>  
+            
             {{$ingredientes->links()}} 
+            
         </div>
     </div>
 

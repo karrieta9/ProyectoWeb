@@ -35,8 +35,8 @@
                         <a class="nav-item navb-link {{! Route::is('home') ?: 'active'}} " href="{{ route('home') }}">Inicio</a>
                         <a class="nav-item navb-link {{!Route::is('ingredients*') ?: 'active'}} " href="{{ url('ingredients') }}">Ingredientes</a>
                         <a class="nav-item navb-link {{!Route::is('platos*') ?: 'active'}} " href="{{ url('platos') }}">Platos</a>
-                        <a class="nav-item navb-link {{!Route::is('ingredients') ?: 'active'}} " href="#">Ordenes</a>
-                        <a class="nav-item navb-link {{!Route::is('ingredients') ?: 'active'}} " href="#">Cierre/Liquidacion</a>
+                        <a class="nav-item navb-link {{!Route::is('ordenes*') ?: 'active'}} " href="{{ url('ordenes') }}">Ordenes</a>
+                        <a class="nav-item navb-link {{!Route::is('liquidacion*') ?: 'active'}} " href="{{ url('liquidacion') }}">Liquidacion Y Cierre</a>
                         <a class="nav-item navb-link {{!Route::is('ingredients') ?: 'active'}} " href="#">Ventas</a>
                         {{-- <div class="nav-item dropdown">
                             <a id="navbarDropdown" class="navb-link dropdown-toggle" href="" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>DropDown</a>

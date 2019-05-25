@@ -55,40 +55,34 @@
                                 </div>
                             </div>
 
+                            <h6>Ingredientes: </h6>
+                            @error('ingrediente' )
+                                <div class="alert alert-danger" role="alert">
+                                    {{ $message }}
+                                </div>
+                            @enderror
+                            @error('cantidad.*' )
+                                <div class="alert alert-danger" role="alert">
+                                    {{ $message }}
+                                </div>
+                            @enderror
+
                             <div class="form-group row">
-                                 <div class="col-md-12">
-                                        <h6>Ingredientes: </h6>
-                                        @error('ingrediente' )
-                                            <div class="alert alert-danger" role="alert">
-                                                {{ $message }}
-                                            </div>
-                                        @enderror
-                                        @foreach($ingredientes as $ingrediente)
-                                         <div class="form-check pb-4">
-                                            <input type="checkbox" class="form-check-input" id="{{'ingrediente'}}{{$ingrediente->codigo}}" value="{{$ingrediente->codigo}}" name="ingrediente[]"  onChange="comprobar(this,{{$ingrediente->codigo}});">
-                                            <label class="form-check-label" for="{{'ingrediente'}}{{$ingrediente->codigo}}">{{$ingrediente->nombre}}</label>
-                                            <input id="{{'cantidad'}}{{$ingrediente->codigo}}" type="text" placeholder="{{ __('Cantidad') }}" class="form-control @error('cantidad.*') is-invalid @enderror" name="cantidad[]"  required autocomplete="cantidad" value="{{ old('cantidad.*') }}" disabled>
-                                            @error('cantidad.*')
-                                                <span class="invalid-feedback" role="alert">
-                                                    <strong>{{ $message }}</strong>
-                                                </span>
-                                             @enderror
-                                        </div>
-                                        @endforeach
-
-                                          
-
-                                              {{-- <select multiple class="form-control" id="exampleFormControlSelect2" name="select">
-                                                    <option value="1">1</option>
-                                                    <option value="2">2</option>
-                                                    <option value="3">3</option>
-                                                    <option value="4">4</option>
-                                                    <option value="5">5</option>
-                                                  </select>       --}}
+                                @forelse($ingredientes as $ingrediente)
+                                <div class="col-lg-3 col-md-4 col-sm-6 pr-0">
+                                    <div class="form-check pb-4 ">
+                                        <input type="checkbox" class="form-check-input" id="{{'ingrediente'}}{{$ingrediente->codigo}}" value="{{$ingrediente->codigo}}" name="ingrediente[]"  onChange="comprobar(this,{{$ingrediente->codigo}});">
+                                        <label class="form-check-label" for="{{'ingrediente'}}{{$ingrediente->codigo}}">{{$ingrediente->nombre}}</label>
+                                        <input id="{{'cantidad'}}{{$ingrediente->codigo}}" type="text" placeholder="{{ __('Cantidad') }}" class="form-control" name="cantidad[]"  required autocomplete="cantidad" value="{{ old('cantidad.*') }}" disabled>
+                                    </div>
+                                </div>
+                                @empty
+                                <div class="form-check pl-4">
+                                    <li class="info_bd">No hay Registro en Base de Datos Ingredientes</li>
                                  </div>
-                                
+                                @endforelse   
                             </div>
-        
+                            
                             <div class="form-group row mb-0">
                                 <div class="col-md-12 mt-3 mx-auto">
                                     <button type="submit" class="btn btnSubmit">
@@ -104,34 +98,40 @@
             </div>  
         </div>
 
-        {{-- <div class="table-responsive mt-5">
-            <h1>Listado de <span>Ingredientes<span></h1>
-            <table style="border: 1px solid #dee2e6;" class="table table-hover text-center mt-3">
+        <div class="table-responsive mt-5">
+            <h1>Listado de <span>Platos<span></h1>
+            <table style="border: 1px solid #dee2e6;" class="table table-hover text-center  mt-3">
                 <thead>
                     <tr>
                         <th scope="col">Codigo</th>
                         <th scope="col">Nombre</th>
-                        <th scope="col">Proveedor</th>
+                        <th scope="col">Ingredientes</th>
+                        <th scope="col">Valor</th>
                         <th scope="col">Acciones</th>
                     </tr>
                 </thead>
                 <tbody>
-                    @foreach($ingredientes as $ingrediente)    
+                    @forelse($platos as $plato)    
                     <tr>
-                        <th scope="row">{{$ingrediente->codigo}}</th>
-                        <td>{{$ingrediente->nombre}}</td>
-                        <td>{{$ingrediente->proveedor}}</td>
-                        <td><a class="btn-link" href="{{url('/ingredients/'.$ingrediente->codigo.'/edit')}}">Actualizar</a></td>
-                    </tr> --}}
-                {{-- @else
-                    <tr>
-                        <td col="4">No hay Registros en la Bd</td>
-                        </tr> --}}
-                    {{-- @endforeach 
-                </tbody>
+                        <th scope="row">{{$plato->codigo}}</th>
+                        <td>{{$plato->nombre}}</td>
+                        <td>
+                        @for($i=0 ; $i < count($plato->ingredientes); $i++)     
+                            {{$plato->ingredientes[$i]['nombre']}}, Cantidad: {{$plato->ingredientes[$i]['pivot']['cantidad']}} <br>
+                        @endfor    
+                        </td>
+                        <td>${{$plato->valor}}</td>
+                        <td><a class="btn-link" href="{{url('/platos/'.$plato->codigo.'/edit')}}">Actualizar</a></td>
+                    </tr> 
+                    @empty
+                    <tr><td colspan="5">No hay Registro en Base de Datos Platos</td></tr>
+                    @endforelse    
+                </tbody>     
             </table>  
-            {{$ingredientes->links()}} 
-        </div> --}}
+           
+            {{$platos->links()}}
+           
+        </div>
     </div>
 
 @endsection

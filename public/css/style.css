@@ -187,7 +187,11 @@ footer p{
 }
 .form-check input[type="text"]{
     width: 100px;
-    display: inline-block;   
+    font-size: 15px;
+    margin-left: -20px;
+}
+.form-check input[type="checkbox"]{
+    margin-top: 5px;
 }
 
 /* ESTILOS PAGINADOR */

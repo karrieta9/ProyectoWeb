@@ -26,4 +26,15 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 
 Route::resource('ingredients','IngredientesController');
-Route::resource('platos','PlatosController');
+//Route::get('plateado', 'prueba@index');
+Route::resource('platos', 'PlatosController');
+Route::resource('ordenes','OrdensController');
+
+route::get('hola', function () {
+    
+    return view('platos');
+});
+
+Route::resource('liquidacion', 'LiquidacionController');
+
+//Route::post('liquidacion', 'HomeController@buscarPlatos');
