@@ -141,7 +141,6 @@ footer p{
     border: 1px solid #999999;
     text-transform: capitalize;
 }
-/* , .card-body form input:hover + .card-body form input:focus */
 .card-body form input:hover {
     border: 1px solid var(--colorprincipal);
 }
@@ -193,7 +192,6 @@ footer p{
 .form-check input[type="checkbox"]{
     margin-top: 5px;
 }
-
 ul li{
     color: #666;;
     text-transform: capitalize;
@@ -210,3 +208,4 @@ ul li{
     background-color: var(--colorprincipal);
     border-color: var(--colorprincipal);
 }
+

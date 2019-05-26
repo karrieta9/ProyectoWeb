@@ -7,6 +7,11 @@ use Illuminate\Http\Request;
 
 class LiquidacionController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+    
     public function index()
     {
         return view('liquidacion_cierre');
@@ -14,6 +19,8 @@ class LiquidacionController extends Controller
 
     public function show(Request $request)
     {
+        $inputs = $request->validate(['mesa' => 'required|numeric']);
+
         $mesa = Orden::mesa($request->get("mesa"))->get();
         
          if(count($mesa)){

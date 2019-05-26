@@ -12,30 +12,15 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return redirect('/login');
 });
 
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
-
-//  Route::get('/ingredients', 'IngredientesController@index')->name('ingredients');
-//  Route::post('/ingredients', 'IngredientesController@store');
-// Route::get('ingredients/{ingredient}/edit', 'IngredientesController@edit');
-
-
-
 Route::resource('ingredients','IngredientesController');
-//Route::get('plateado', 'prueba@index');
 Route::resource('platos', 'PlatosController');
 Route::resource('ordenes','OrdensController');
 Route::resource('liquidacion', 'LiquidacionController');
-
-
-
 Route::get('liquidacion/cierre', 'LiquidacionController@show')->name('liquidacion');
 Route::get('ventas','HomeController@ventas')->name('ventas');
-
-
-
-//Route::post('liquidacion', 'HomeController@buscarPlatos');

@@ -91,7 +91,7 @@
         </div>
 
         <div class="table-responsive mt-5">
-                <h1>Listado de <span>Ingredientes<span></h1>
+                <h1>Listado de <span>Ordenes<span></h1>
                 <table style="border: 1px solid #dee2e6;" class="table table-hover text-center mt-3">
                     <thead>
                         <tr>
@@ -117,7 +117,7 @@
                             </td>
                             <td>{!! \Carbon\Carbon::parse($orden->Fecha)->format('d-m-Y') !!}</td>
                             <td>{{$orden->Estado}}</td>
-                            <td><a class="btn-link" href="{{url('/ordenes/'.$orden->Numero.'/edit')}}">Actualizar</a></td>
+                            <td><a class="btn-link" href="">Actualizar</a></td>
                         </tr>
                         @empty
                         <tr><td colspan="6">No hay Registro en Base de Datos Ordenes</td></tr>

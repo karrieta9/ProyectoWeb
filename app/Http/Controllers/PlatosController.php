@@ -8,6 +8,11 @@ use Illuminate\Http\Request;
 
 class PlatosController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+    
     public function index(){
         $datos['ingredientes'] = Ingrediente::all()->sortBy("nombre");
         $platos['platos'] = Plato::paginate(5);
@@ -20,7 +25,7 @@ class PlatosController extends Controller
         $inputs = $request->validate(['nombre' => 'required|string|max:50',
                                       'valor' => 'required|numeric|max:100000',
                                       'ingrediente'    => 'required|array|min:1',
-                                      'cantidad.*'  => 'required|numeric',]);
+                                      'cantidad.*'  => 'required|numeric|max:80']);
 
         $msg = "No es Posible Registrar el Plato";
         if ($request->get("nombre")) {
