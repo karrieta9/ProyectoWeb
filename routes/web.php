@@ -35,6 +35,8 @@ route::get('hola', function () {
     return view('platos');
 });
 
+
+Route::get('liquidacion/cierre', 'LiquidacionController@show');
 Route::resource('liquidacion', 'LiquidacionController');
 
 //Route::post('liquidacion', 'HomeController@buscarPlatos');

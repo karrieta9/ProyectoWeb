@@ -19,6 +19,10 @@
             <div class="alert alert-success" role="alert">
                 {{ session('Mensaje') }}
             </div>
+        @elseif(session('Info'))
+            <div class="alert alert-info" role="alert">
+                {{ session('Info') }}
+            </div>       
         @endif
     </div>
     
@@ -106,7 +110,9 @@
                             <td>{{$orden->Mesa}}</td>
                             <td>
                             @for($i=0 ; $i < count($orden->platos); $i++)     
-                                {{$orden->platos[$i]['nombre']}}, Cantidad: {{$orden->platos[$i]['pivot']['cantidad']}} <br>
+                                {{$orden->platos[$i]['nombre']}}, Cantidad: {{$orden->platos[$i]['pivot']['cantidad']}},
+                                Valor: ${{$orden->platos[$i]['pivot']['Valor']}}  <br>
+
                             @endfor    
                             </td>
                             <td>{!! \Carbon\Carbon::parse($orden->Fecha)->format('d-m-Y') !!}</td>

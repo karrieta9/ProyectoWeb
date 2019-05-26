@@ -12,11 +12,32 @@ class LiquidacionController extends Controller
         return view('liquidacion_cierre');
     }    
 
-    public function edit(Request $request, $mesa)
+    public function show(Request $request)
     {
-        $mesa = Orden::mesa($request->get("mesa"))->paginate();
+         $mesa = Orden::mesa($request->get("mesa"))->get();
 
-        return view('cierre',compact('mesa'));
+    
+
+         if(count($mesa)){
+            return view('cierre',compact('mesa'));
+         }else{
+            return redirect('liquidacion')->with(['Info' =>'No hay una Orden Activa para esa Mesa']);     
+         } 
+    }
+
+    public function update(Request $request, $numeroOrden)
+    {   
+        $valorOrden=0;
+        
+        Orden::where('Numero','=',$numeroOrden)->update(['Estado' => 'C']); 
+        $ordens = Orden::findOrFail($numeroOrden);
+       
+        for ($i=0; $i < count($ordens->platos) ; $i++) { 
+             $valorOrden += $ordens->platos[$i]['pivot']['Valor'];
+        }
+
+        return redirect('liquidacion/cierre')->with('Mensaje','Orden Cerrada Correctamente')->with('Valor',$valorOrden);
+
     }
 
 }

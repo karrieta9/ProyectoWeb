@@ -20,20 +20,32 @@
             <div class="col-lg-12 col-md-11 pt-3">
                 <div class="card px-5 py-4 mb-3">
                     <div class="card-body pb-0">
-                        <form method="GET" action="{{url('/liquidacion')}}">
+                           
+                        <form method="POST" action="{{url('/liquidacion/'.$mesa[0]->Numero)}}">
+                        @csrf
+                        {{method_field('PATCH')}}
+                        <input type="hidden" value="{{$mesa[0]->Numero}}">   
 
-                            @foreach($mesa as $me)        
+                        @foreach($mesa as $me)       
                         <h6>Informacion: </h6>
-                        <label>Numero de Orden: {{$me->Numero}}</label><br>
-                        <label>Numero de Mesa: {{$me->Mesa}}</label><br>
-                        <label>Fecha: {!! \Carbon\Carbon::parse($me->Fecha)->format('d-m-Y') !!}</label><br>
-                        <label>Estado: {{$me->Estado}}</label><br>
-                        <h6>Platos: </h6>
-                            @for($i=0 ; $i < count($me->platos); $i++)     
-                                {{$me->platos[$i]['nombre']}}, Cantidad: {{$me->platos[$i]['pivot']['cantidad']}}, Valor: {{$me->platos[$i]['valor']}} <br>
+                        <ul>
+                            <li>Numero de Orden: {{$me->Numero}}</li>
+                            <li>Numero de Mesa: {{$me->Mesa}}</li>
+                            <li>Fecha: {!! \Carbon\Carbon::parse($me->Fecha)->format('d-m-Y') !!}</li>
+                            <li>Estado: {{$me->Estado}}</li>
+                        </ul> 
+                        <h6>Platos: </h6>   
+                        <ul>
+                            @for($i=0 ; $i < count($me->platos); $i++) 
+                                <li>{{$me->platos[$i]['nombre']}}, Cantidad: {{$me->platos[$i]['pivot']['cantidad']}}, Valor: ${{$me->platos[$i]['pivot']['Valor']}}</li>    
+                                {{-- {{
+                                $valor = 0;
+                                $valor = $valor + $me->platos[$i]['pivot']['Valor'];
+                                }}  --}}
                             @endfor 
-    
-                          @endforeach
+                        </ul>
+                        @endforeach
+                        {{-- total a pagar : {{$valor}}; --}}
                            
                             
                             <div class="form-group row mb-0">

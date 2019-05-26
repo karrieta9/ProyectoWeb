@@ -20,7 +20,7 @@ class CreateOrdenPlatoTable extends Migration
             $table->unsignedInteger('CodPlato');
             $table->foreign('CodPlato')->references('codigo')->on('platos');
             $table->integer('cantidad');
-            $table->double('Valor', 8, 2)->nullable();
+            $table->double('Valor', 8, 2);
             $table->timestamps();
         });
     }

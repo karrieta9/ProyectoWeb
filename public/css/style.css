@@ -194,6 +194,11 @@ footer p{
     margin-top: 5px;
 }
 
+ul li{
+    color: #666;;
+    text-transform: capitalize;
+}
+
 /* ESTILOS PAGINADOR */
 .page-link{
     color: var(--colorprincipal);

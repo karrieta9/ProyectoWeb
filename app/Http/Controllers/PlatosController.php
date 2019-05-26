@@ -18,7 +18,7 @@ class PlatosController extends Controller
     public function store(Request $request)
     {
         $inputs = $request->validate(['nombre' => 'required|string|max:50',
-                                      'valor' => 'required|numeric',
+                                      'valor' => 'required|numeric|max:100000',
                                       'ingrediente'    => 'required|array|min:1',
                                       'cantidad.*'  => 'required|numeric',]);
 

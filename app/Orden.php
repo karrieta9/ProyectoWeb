@@ -11,7 +11,7 @@ class Orden extends Model
 
     public function platos()
     {
-        return $this->belongsToMany(Plato::class, 'orden_plato', 'NumOrden', 'CodPlato')->withPivot('cantidad')->withTimestamps();  
+        return $this->belongsToMany(Plato::class, 'orden_plato', 'NumOrden', 'CodPlato')->withPivot('cantidad','Valor')->withTimestamps();  
     }
 
     public function scopeMesa($query, $mesa){

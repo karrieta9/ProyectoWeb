@@ -57,30 +57,31 @@ class OrdensController extends Controller
         if(count($buscar)){
             $msg='Ya Existe una Orden Activa para esta Mesa';
         }else{
-        $msg = "No es Posible Registrar la Orden";
-        if ($request->get("mesa")) {
-            $mesa = $request->get("mesa");
-            $platos = $request->get("plato");
-            $cantidad = $request->get("cantidad");
-
-            if ($mesa != "") {
-                try {
-                    $orden = new Orden;
-                    $orden->Mesa = $mesa;
-                    $orden->save();
-                        for ($i=0; $i < count($platos) ; $i++) {
-                            $ultimaOrden = Orden::all()->last();
-                            $ultimaOrden->platos()->attach($platos[$i] , ['cantidad' => $cantidad[$i]]);
+            $msg = "No es Posible Registrar la Orden";
+            if ($request->get("mesa")) {
+                $mesa = $request->get("mesa");
+                $platos = $request->get("plato");
+                $cantidad = $request->get("cantidad");
+                    if ($mesa != "") {
+                        try {
+                            $orden = new Orden;
+                            $orden->Mesa = $mesa;
+                            $orden->save();
+                                for ($i=0; $i < count($platos) ; $i++) {
+                                    $ultimaOrden = Orden::all()->last();
+                                    Plato::findOrFail($platos[$i])['valor'];
+            
+                                    $ultimaOrden->platos()->attach($platos[$i], [ 'Valor' => ($cantidad[$i] * Plato::findOrFail($platos[$i])['valor']) , 'cantidad' => $cantidad[$i] ] );
+                                }
+                            $msg='Orden Registrada Correctamente';
+                        } catch (Exception $e) {
+                            $msg = $e->getMessage();
                         }
-                    $msg='Orden Registrada Correctamente';
-                } catch (Exception $e) {
-                    $msg = $e->getMessage();
-                }
+                    }
             }
         }
-        }
       
-       return redirect('ordenes')->with(['Mensaje' => $msg]); 
+      return redirect('ordenes')->with(['Mensaje' => $msg]); 
     }
 
     /**
