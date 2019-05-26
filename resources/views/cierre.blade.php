@@ -14,7 +14,7 @@
     </div>
     
     <div class="container">
-        <h1>Liquidacion Y <span>Cierre2<span></h1>         
+        <h1>Liquidacion Y <span>Cierre<span></h1>         
 
         <div class="row justify-content-center">
             <div class="col-lg-12 col-md-11 pt-3">
@@ -34,19 +34,18 @@
                             <li>Fecha: {!! \Carbon\Carbon::parse($me->Fecha)->format('d-m-Y') !!}</li>
                             <li>Estado: {{$me->Estado}}</li>
                         </ul> 
-                        <h6>Platos: </h6>   
+                        <h6>Platos: </h6> 
+                        <?php $valor = 0; ?>  
                         <ul>
                             @for($i=0 ; $i < count($me->platos); $i++) 
                                 <li>{{$me->platos[$i]['nombre']}}, Cantidad: {{$me->platos[$i]['pivot']['cantidad']}}, Valor: ${{$me->platos[$i]['pivot']['Valor']}}</li>    
-                                {{-- {{
-                                $valor = 0;
-                                $valor = $valor + $me->platos[$i]['pivot']['Valor'];
-                                }}  --}}
+                                
+                                <?php $valor = $valor + $me->platos[$i]['pivot']['Valor']; ?> 
                             @endfor 
                         </ul>
+
+                        <h2>Total A Pagar: ${{$valor}}  </h2>
                         @endforeach
-                        {{-- total a pagar : {{$valor}}; --}}
-                           
                             
                             <div class="form-group row mb-0">
                                 <div class="col-md-12 mt-3 mx-auto">
@@ -61,9 +60,7 @@
                     </div>
                 </div>
             </div>  
-        </div>
-
-        
+        </div>  
     </div>
 
 @endsection

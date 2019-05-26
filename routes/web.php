@@ -29,14 +29,13 @@ Route::resource('ingredients','IngredientesController');
 //Route::get('plateado', 'prueba@index');
 Route::resource('platos', 'PlatosController');
 Route::resource('ordenes','OrdensController');
-
-route::get('hola', function () {
-    
-    return view('platos');
-});
-
-
-Route::get('liquidacion/cierre', 'LiquidacionController@show');
 Route::resource('liquidacion', 'LiquidacionController');
+
+
+
+Route::get('liquidacion/cierre', 'LiquidacionController@show')->name('liquidacion');
+Route::get('ventas','HomeController@ventas')->name('ventas');
+
+
 
 //Route::post('liquidacion', 'HomeController@buscarPlatos');

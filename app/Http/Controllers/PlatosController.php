@@ -48,4 +48,23 @@ class PlatosController extends Controller
       
        return redirect('platos')->with(['Mensaje' => $msg]); 
     }
+
+    public function edit($codigo)
+    {
+        $plato = Plato::findOrFail($codigo);
+
+        return view('updatePlato',compact('plato'));
+    }
+
+    public function update(Request $request, $codigo)
+    {
+        $inputs = $request->validate(['nombre' => 'required|string|max:50',
+                                        'valor' => 'required|numeric|max:100000']);
+                    
+        $datos = request()->except(['_token','_method']);
+        Plato::where('codigo','=',$codigo)->update($datos); 
+
+        return redirect('platos')->with('Mensaje','Plato Actualizado Correctamente');
+
+    }
 }

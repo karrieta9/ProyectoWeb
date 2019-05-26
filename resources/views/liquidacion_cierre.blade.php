@@ -30,7 +30,7 @@
             <div class="col-lg-12 col-md-11 pt-3">
                 <div class="card px-5 py-4 mb-3">
                     <div class="card-body pb-0">
-                        <form method="GET" action="{{url('liquidacion/cierre')}}">
+                        <form method="GET" action="{{url('liquidacion/cierre')}}"> 
                             {{-- @csrf --}}
                             <div class="form-group row">
                                 <div class="col-md-12">
@@ -51,7 +51,7 @@
                                 </div>
                             </div>
         
-                            <hr>
+                            <hr> 
                         </form>
                     </div>
                 </div>

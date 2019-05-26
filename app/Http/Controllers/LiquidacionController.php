@@ -14,10 +14,8 @@ class LiquidacionController extends Controller
 
     public function show(Request $request)
     {
-         $mesa = Orden::mesa($request->get("mesa"))->get();
-
-    
-
+        $mesa = Orden::mesa($request->get("mesa"))->get();
+        
          if(count($mesa)){
             return view('cierre',compact('mesa'));
          }else{
@@ -30,13 +28,8 @@ class LiquidacionController extends Controller
         $valorOrden=0;
         
         Orden::where('Numero','=',$numeroOrden)->update(['Estado' => 'C']); 
-        $ordens = Orden::findOrFail($numeroOrden);
-       
-        for ($i=0; $i < count($ordens->platos) ; $i++) { 
-             $valorOrden += $ordens->platos[$i]['pivot']['Valor'];
-        }
-
-        return redirect('liquidacion/cierre')->with('Mensaje','Orden Cerrada Correctamente')->with('Valor',$valorOrden);
+    
+        return redirect('liquidacion')->with('Mensaje','Orden Cerrada Correctamente');
 
     }
 

@@ -35,7 +35,7 @@
             <div class="info"><h2>Liquidacion Y Cierre De Ordenes</h2></div>
         </a>
 
-        <a href="" class="imagen col-7 col-md-5 col-lg-2 mb-4 mb-lg-0 mx-md-auto mx-lg-0">
+        <a href="{{ url('ventas') }}" class="imagen col-7 col-md-5 col-lg-2 mb-4 mb-lg-0 mx-md-auto mx-lg-0">
             <div class="info"><h2>Listado De Ventas</h2></div>
         </a>
         
